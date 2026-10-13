@@ -1,0 +1,132 @@
+/* Visual layer for the Week 06 starter. The supplied app behavior stays in App.vue. */
+:root {
+  --accent: #176b60;
+  --ink: #18332f;
+  --muted: #687772;
+  --line: #dce5df;
+  font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+  color: var(--ink);
+  background: #f4f5ef;
+}
+
+body { min-width: 320px; }
+.shell { max-width: none; grid-template-columns: minmax(0, 1.04fr) minmax(0, .96fr); }
+
+.intro {
+  position: relative;
+  isolation: isolate;
+  min-height: 100svh;
+  overflow: hidden;
+  padding: clamp(32px, 4vw, 68px);
+  color: #f8f8ef;
+  background:
+    radial-gradient(circle at 76% 71%, #1d776b 0, transparent 34%),
+    radial-gradient(circle at -12% 12%, #42665d 0, transparent 34%),
+    linear-gradient(145deg, #183f40 3%, #082e34 52%, #082b2c 100%);
+}
+.intro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: .28;
+  background-image: radial-gradient(#d6e9d9 0.7px, transparent 0.7px);
+  background-size: 21px 21px;
+  mask-image: linear-gradient(90deg, transparent 10%, #000 100%);
+}
+.intro::after {
+  content: "";
+  position: absolute;
+  right: -190px;
+  bottom: -310px;
+  width: 660px;
+  height: 660px;
+  border: 1px solid #a2d3bc31;
+  border-radius: 50%;
+  box-shadow: 0 0 0 75px #a2d3bc0c, 0 0 0 155px #a2d3bc09;
+  pointer-events: none;
+}
+.intro-top, .intro-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; position: relative; z-index: 2; }
+.brand { display: inline-flex; align-items: center; gap: 13px; color: #fff; font-size: 15px; font-weight: 800; letter-spacing: .16em; }
+.brand-icon { display: inline-grid; place-items: center; width: 39px; height: 39px; border: 1px solid #ffffff70; border-radius: 12px; font-size: 25px; line-height: 1; color: #d8ff9b; }
+.edition, .intro-footer { color: #bdd4cc; font-size: 10px; font-weight: 700; letter-spacing: .14em; }
+.intro-copy { position: relative; z-index: 2; margin: clamp(94px, 15vh, 160px) 0 0; padding: 0; max-width: 700px; }
+.intro .eyebrow { color: #d6edbe; display: flex; align-items: center; gap: 14px; font-size: 11px; letter-spacing: .24em; margin-bottom: 28px; }
+.eyebrow-line { width: 34px; height: 1px; background: #d6edbe; }
+.intro h1 { color: #f8f8ef; font-family: Georgia, "Times New Roman", serif; font-size: clamp(58px, 5.8vw, 96px); font-weight: 400; letter-spacing: -.055em; line-height: 1.03; margin-bottom: 28px; }
+.intro h1 em { color: #d4efab; font-weight: 400; }
+.intro-copy>p:last-child { color: #c9d9d1; font-size: 16px; line-height: 1.7; max-width: 330px; }
+.intro-footer { margin-top: auto; padding-top: 36px; font-size: 10px; }
+
+.hero-scene { position: absolute; z-index: 1; width: 430px; height: 430px; right: 15px; bottom: 58px; pointer-events: none; }
+.scene-orbit { position: absolute; border: 1px solid #d9ffb32e; border-radius: 50%; }
+.orbit-outer { width: 380px; height: 380px; left: 28px; top: 20px; }
+.orbit-inner { width: 290px; height: 290px; left: 75px; top: 65px; border-style: dashed; border-color: #e0f1c16b; }
+.scene-disc { position: absolute; left: 125px; top: 112px; width: 200px; height: 200px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 50%; border: 1px solid #c8f0cdab; background: radial-gradient(circle at 30% 25%, #91c6a4 0, #367f73 46%, #175a57 100%); box-shadow: inset -18px -18px 36px #083c444c, 0 25px 60px #05292e80; transform: rotate(-13deg); }
+.disc-star { font-size: 55px; line-height: 1; color: #edffc8; }
+.disc-caption { color: #f4fff0; font-size: 10px; font-weight: 800; letter-spacing: .22em; text-align: center; line-height: 1.6; margin-top: 10px; }
+.scene-chip { position: absolute; display: flex; align-items: center; gap: 9px; border: 1px solid #f0ffdb66; background: #f5ffe8ed; color: #184a41; box-shadow: 0 14px 34px #092f3490; border-radius: 100px; white-space: nowrap; font-size: 11px; font-weight: 750; letter-spacing: .04em; padding: 11px 16px; }
+.scene-chip span:first-child { color: #569461; font-size: 17px; }
+.chip-one { top: 65px; right: 28px; transform: rotate(7deg); }
+.chip-two { bottom: 60px; left: 12px; transform: rotate(-7deg); }
+.scene-chip .chip-dot { width: 8px; height: 8px; border-radius: 50%; background: #60a184; }
+
+.workspace { min-height: 100svh; padding: 40px clamp(28px, 5vw, 85px) 26px; background: #f4f5ef; }
+.workspace-top { display: flex; justify-content: space-between; align-items: center; gap: 20px; color: #8a9990; font-size: 10px; font-weight: 800; letter-spacing: .17em; }
+.demo-label { margin: 0; display: flex; align-items: center; gap: 9px; color: #55766c; font-size: inherit; font-weight: inherit; letter-spacing: inherit; }
+.status-dot { width: 7px; height: 7px; border-radius: 50%; background: #4eb596; box-shadow: 0 0 0 4px #4eb59622; }
+.card-shell { width: 100%; max-width: 520px; min-height: auto; margin: auto; }
+.card { position: relative; padding: clamp(30px, 3.5vw, 52px); border: 1px solid #e1e8df; border-radius: 24px; background: #fff; box-shadow: 0 22px 62px #2e53421c, 0 2px 8px #2e53420c; }
+.card::before { content: "✳"; position: absolute; top: 26px; right: 31px; color: #c5d9b6; font-size: 27px; }
+.card-eyebrow { color: #2d8e75; letter-spacing: .19em; margin: 0 0 17px; font-size: 10px; }
+.card h2 { color: #183a34; font-family: Georgia, "Times New Roman", serif; font-size: clamp(48px, 4vw, 66px); font-weight: 400; letter-spacing: -.065em; line-height: 1; margin-bottom: 17px; }
+.description { font-size: 15px; color: #718078; margin-bottom: 30px; }
+.field { margin-bottom: 19px; }
+.field label { color: #2a4038; font-size: 12px; font-weight: 800; letter-spacing: .02em; margin-bottom: 9px; }
+.field input { min-height: 52px; border-color: #dbe5df; border-radius: 10px; background: #fbfcf9; padding: 13px 16px; color: var(--ink); }
+.field input::placeholder { color: #9aa9a0; }
+.field small { color: #839189; font-size: 11px; margin-top: 7px; }
+.primary { min-height: 55px; justify-content: space-between; border-radius: 10px; background: #146e5f; box-shadow: 0 9px 20px #1673602e; font-size: 14px; letter-spacing: .01em; padding: 14px 18px 14px 20px; }
+.button-arrow { display: grid; place-items: center; width: 30px; height: 30px; border: 1px solid #ffffff6b; border-radius: 7px; font-size: 20px; font-weight: 400; }
+.error-message { font-size: 12px; margin-bottom: 15px; }
+.switch-copy { margin-top: 22px; color: #7c8980; font-size: 13px; text-align: center; }
+.text-button { color: #126c5d; font-size: 13px; text-decoration-thickness: 1px; }
+.notice, .demo-note { width: 100%; max-width: 520px; margin-left: auto; margin-right: auto; }
+.notice { margin-top: 13px; min-height: 19px; }
+.demo-note { color: #849188; text-align: center; margin-top: 7px; font-size: 11px; }
+.demo-note span { display: inline-grid; place-items: center; width: 16px; height: 16px; border: 1px solid #a3b6a8; border-radius: 50%; margin-right: 4px; font-size: 10px; }
+.profile-details { border-color: #e3ebe4; }
+.welcome .primary { margin-top: 20px; }
+.signup-shell .field { margin-bottom: 13px; }
+.signup-shell .field input { min-height: 47px; padding: 10px 14px; }
+.signup-shell .field label { margin-bottom: 6px; }
+.signup-shell .description { margin-bottom: 23px; }
+.signup-shell .error-message { margin-bottom: 12px; }
+
+@media (max-width: 1100px) and (min-width: 761px) {
+  .intro { padding: 40px; }
+  .intro h1 { font-size: clamp(55px, 6vw, 78px); }
+  .hero-scene { transform: scale(.8); transform-origin: right bottom; }
+  .workspace { padding-inline: 28px; }
+  .card { padding: 34px; }
+}
+@media (max-width: 760px) {
+  .shell { grid-template-columns: 1fr; }
+  .intro { min-height: 0; padding: 18px 22px; }
+  .intro::before, .intro::after, .intro-copy, .hero-scene, .intro-footer, .edition { display: none; }
+  .brand { font-size: 13px; }
+  .brand-icon { width: 34px; height: 34px; font-size: 21px; }
+  .workspace { min-height: calc(100svh - 71px); padding: 23px 18px 20px; }
+  .workspace-top { margin-bottom: 20px; }
+  .card-shell { min-height: 0; }
+  .card { border-radius: 20px; padding: clamp(25px, 6vw, 36px); }
+  .card h2 { font-size: 50px; }
+  .description { margin-bottom: 26px; }
+  .demo-note { margin-top: 7px; }
+}
+@media (max-width: 390px) {
+  .workspace { padding-inline: 13px; }
+  .card { padding: 24px 21px; }
+  .card h2 { font-size: 45px; }
+  .workspace-top { font-size: 9px; }
+}

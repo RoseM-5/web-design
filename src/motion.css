@@ -1,0 +1,54 @@
+/* Input feedback: keep the transition on the resting state so blur is smooth too. */
+.field input {
+  transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+.field input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: #fff;
+  box-shadow: 0 0 0 4px #176b6026;
+}
+
+/* Buttons give immediate hover and press feedback. */
+.primary {
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+.primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: #0d5b50;
+  box-shadow: 0 15px 26px #1673603d;
+}
+.primary:active:not(:disabled) { transform: translateY(0) scale(.98); }
+
+/* Vue re-adds is-error for each validation error; the short shake plays once. */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25%, 75% { transform: translateX(-6px); }
+  50% { transform: translateX(6px); }
+}
+.is-error { animation: shake 380ms ease; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+.spinner { animation: spin 800ms linear infinite; }
+
+/* One Vue transition serves sign in, sign up, and the welcome screen. */
+.panel-enter-active, .panel-leave-active {
+  transition: opacity 320ms ease, transform 320ms ease;
+}
+.panel-enter-from { opacity: 0; transform: translateY(18px); }
+.panel-leave-to { opacity: 0; transform: translateY(-12px); }
+
+@keyframes drift {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -12px; }
+}
+.scene-disc { animation: drift 7s ease-in-out infinite; }
+.chip-one { animation: drift 8s ease-in-out infinite; }
+.chip-two { animation: drift 9s ease-in-out -3s infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .field input, .primary, .panel-enter-active, .panel-leave-active { transition: none; }
+  .is-error, .spinner, .scene-disc, .scene-chip { animation: none; }
+  .primary:hover:not(:disabled), .primary:active:not(:disabled),
+  .panel-enter-from, .panel-leave-to { transform: none; }
+}
