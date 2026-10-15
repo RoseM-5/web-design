@@ -1,6 +1,7 @@
 <script setup>
 import { ref, nextTick, onBeforeUnmount } from 'vue'
 import { readAccounts, saveAccounts, readSession, saveSession, clearSession } from './storage.js'
+import MeadowArt from './MeadowArt.vue'
 
 const mode = ref('signin')
 const name = ref('')
@@ -95,29 +96,23 @@ onBeforeUnmount(() => clearTimeout(timer))
   <main class="shell">
     <aside class="intro">
       <div class="intro-top">
-        <a class="brand" href="#" @click.prevent aria-label="Form Lab home"><span class="brand-icon" aria-hidden="true">✳</span> FORM / LAB</a>
-        <span class="edition">WEB SERVICE DESIGN / 06</span>
+        <a class="brand" href="#" @click.prevent aria-label="Meadow Lab home"><span class="brand-icon" aria-hidden="true">✿</span> meadow<span class="brand-period">.</span></a>
+        <span class="edition">WEB SERVICE DESIGN · WEEK 06</span>
       </div>
-      <div class="intro-copy"><p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> A NEW WAY TO BEGIN</p>
-        <h1>Every great<br>thing starts<br><em>somewhere.</em></h1>
-        <p>A little space to sign in, settle in, and get going.</p>
+      <div class="intro-copy"><p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> A LITTLE SPACE TO GROW</p>
+        <h1>Let your day<br><em>blossom.</em></h1>
+        <p>Fresh starts feel better in a place that feels like yours.</p>
       </div>
-      <div class="hero-scene" aria-hidden="true">
-        <div class="scene-orbit orbit-outer"></div><div class="scene-orbit orbit-inner"></div>
-        <div class="scene-disc"><span class="disc-star">✳</span><span class="disc-caption">YOUR SPACE<br>IS READY</span></div>
-        <div class="scene-chip chip-one"><span>✦</span> Good things ahead</div>
-        <div class="scene-chip chip-two"><span class="chip-dot"></span> Made for the moment</div>
-      </div>
-      <div class="intro-footer"><span>WEB SERVICE DESIGN · ENGLISH SECTION</span><span>EST. 2026 ↗</span></div>
+      <MeadowArt />
     </aside>
     <section class="workspace" aria-label="Sign in and sign up practice">
-      <div class="workspace-top"><p class="demo-label"><span class="status-dot" aria-hidden="true"></span> INTERACTIVE DEMO</p><span>01 / 02</span></div>
+      <div class="workspace-top"><p class="demo-label"><span class="status-dot" aria-hidden="true"></span> MEADOW / LAB</p><span>LOGIN PRACTICE</span></div>
       <Transition name="panel" mode="out-in" @after-enter="focusPanel">
         <section v-if="!profile" :key="mode" class="card-shell" :class="{ 'signup-shell': mode === 'signup' }">
           <div ref="card" class="card" :class="{ 'is-error': shake }">
-            <p class="eyebrow card-eyebrow">{{ mode === 'signup' ? 'LET’S GET STARTED' : 'WELCOME BACK' }}</p>
+            <p class="eyebrow card-eyebrow">{{ mode === 'signup' ? 'PLANT A NEW SEED' : 'GOOD TO SEE YOU AGAIN' }}</p>
             <h2 data-heading tabindex="-1">{{ mode === 'signup' ? 'Sign up.' : 'Sign in.' }}</h2>
-            <p class="description">{{ mode === 'signup' ? 'Create a demo profile in this browser.' : 'Use the email from your demo sign-up.' }}</p>
+            <p class="description">{{ mode === 'signup' ? 'Create your little demo space in this browser.' : 'Pick up where your demo journey left off.' }}</p>
             <form @submit.prevent="submitForm" novalidate :aria-busy="busy">
               <fieldset :disabled="busy">
                 <div v-if="mode === 'signup'" class="field"><label for="name">Demo name</label>
@@ -144,8 +139,8 @@ onBeforeUnmount(() => clearTimeout(timer))
         </section>
         <section v-else key="welcome" class="card-shell">
           <div class="card welcome">
-            <p class="eyebrow card-eyebrow">YOUR DEMO SPACE</p><h2 data-heading tabindex="-1">Hello, {{ profile.name }}.</h2>
-            <p class="description">Your sign-up profile is ready.</p>
+            <p class="eyebrow card-eyebrow">WELCOME TO THE MEADOW</p><h2 data-heading tabindex="-1">Hello, {{ profile.name }}.</h2>
+            <p class="description">Your little demo space is ready to bloom.</p>
             <dl class="profile-details"><dt>Demo email</dt><dd>{{ profile.email }}</dd></dl>
             <p class="reload-hint">Reload to restore this screen. Sign out to return to the form.</p>
             <button class="primary" type="button" @click="logout">Sign out <span aria-hidden="true">↗</span></button>

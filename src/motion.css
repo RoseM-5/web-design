@@ -6,7 +6,7 @@
   outline: none;
   border-color: var(--accent);
   background: #fff;
-  box-shadow: 0 0 0 4px #176b6026;
+  box-shadow: 0 0 0 4px #71a57a38;
 }
 
 /* Buttons give immediate hover and press feedback. */
@@ -15,8 +15,8 @@
 }
 .primary:hover:not(:disabled) {
   transform: translateY(-2px);
-  background: #0d5b50;
-  box-shadow: 0 15px 26px #1673603d;
+  background: #f6cb7b;
+  box-shadow: 0 7px 0 #dba854, 0 17px 27px #d9bd8560;
 }
 .primary:active:not(:disabled) { transform: translateY(0) scale(.98); }
 
@@ -38,17 +38,28 @@
 .panel-enter-from { opacity: 0; transform: translateY(18px); }
 .panel-leave-to { opacity: 0; transform: translateY(-12px); }
 
-@keyframes drift {
+@keyframes cloud-drift {
   0%, 100% { translate: 0 0; }
-  50% { translate: 0 -12px; }
+  50% { translate: 11px 0; }
 }
-.scene-disc { animation: drift 7s ease-in-out infinite; }
-.chip-one { animation: drift 8s ease-in-out infinite; }
-.chip-two { animation: drift 9s ease-in-out -3s infinite; }
+.cloud-one { animation: cloud-drift 8s ease-in-out infinite; }
+.cloud-two { animation: cloud-drift 11s ease-in-out -3s infinite reverse; }
+@keyframes flower-sway {
+  0%, 100% { rotate: -3deg; }
+  50% { rotate: 3deg; }
+}
+.flower-sway use { transform-box: fill-box; transform-origin: center bottom; animation: flower-sway 4s ease-in-out infinite; }
+.flower-two use { animation-delay: -1.5s; }
+.flower-three use { animation-delay: -2.6s; }
+@keyframes butterfly-float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -10px; }
+}
+.butterfly { animation: butterfly-float 3s ease-in-out infinite; }
 
 @media (prefers-reduced-motion: reduce) {
   .field input, .primary, .panel-enter-active, .panel-leave-active { transition: none; }
-  .is-error, .spinner, .scene-disc, .scene-chip { animation: none; }
+  .is-error, .spinner, .cloud, .flower-sway use, .butterfly { animation: none; }
   .primary:hover:not(:disabled), .primary:active:not(:disabled),
   .panel-enter-from, .panel-leave-to { transform: none; }
 }

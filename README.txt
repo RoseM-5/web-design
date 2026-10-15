@@ -8,7 +8,8 @@ Preview the built site: npm run preview
 
 The supplied Vue flow is preserved. src/storage.js completes browser data
 persistence. src/motion.css adds focus, button, error, loading, panel, and
-reduced-motion effects. src/design.css gives the demo its visual design.
+reduced-motion effects. src/meadow.css and src/MeadowArt.vue create the
+pastoral flat-illustration design.
 
 Try it: Sign up with a demo name, email, and matching password fields. Then
 sign in with the registered email and any 4+ made-up characters. Reload to

@@ -1,0 +1,116 @@
+/* A warm, flat-illustration skin over the course starter layout. */
+:root {
+  --accent: #3d7850;
+  --ink: #294837;
+  --muted: #718071;
+  --line: #dfe4d4;
+  font-family: "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+  color: var(--ink);
+  background: #fffdf6;
+}
+
+body { min-width: 320px; }
+button:focus-visible, a:focus-visible { outline: 3px solid #b88036; outline-offset: 4px; }
+.shell { max-width: none; min-height: 100svh; grid-template-columns: minmax(0, 1.07fr) minmax(0, .93fr); }
+
+.intro {
+  position: relative;
+  isolation: isolate;
+  min-height: 100svh;
+  overflow: hidden;
+  padding: clamp(31px, 3.8vw, 58px);
+  background: #dff2ed;
+  color: #315943;
+}
+.intro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at 78% 10%, #fff9db7c 0, transparent 26%);
+}
+.intro-top { position: relative; z-index: 3; display: flex; align-items: center; justify-content: space-between; gap: 15px; }
+.brand { display: inline-flex; align-items: center; gap: 9px; color: #2d6545; font-size: 24px; font-weight: 800; letter-spacing: -.06em; text-decoration: none; }
+.brand-icon { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: #ffca63; color: #80502d; font-size: 29px; line-height: 1; letter-spacing: 0; box-shadow: 0 3px 0 #cf9d4f; }
+.brand-period { color: #cf8a3f; margin-left: -8px; }
+.edition { color: #57765e; font-size: 10px; font-weight: 800; letter-spacing: .15em; }
+.intro-copy { position: relative; z-index: 2; margin: clamp(66px, 10vh, 120px) 0 auto; padding: 0; max-width: 590px; }
+.intro .eyebrow { display: flex; align-items: center; gap: 12px; color: #46795a; font-size: 11px; letter-spacing: .2em; margin-bottom: 20px; }
+.eyebrow-line { display: block; width: 31px; height: 2px; background: #e2ad4b; }
+.intro h1 { color: #2a5b43; font-family: "Trebuchet MS", "Segoe UI", system-ui, sans-serif; font-size: clamp(58px, 6vw, 91px); font-weight: 800; line-height: 1.05; letter-spacing: -.075em; margin: 0 0 22px; }
+.intro h1 em { color: #d68e42; font-style: normal; }
+.intro-copy>p:last-child { max-width: 350px; color: #5c7665; font-size: 17px; line-height: 1.65; }
+.meadow-art { position: absolute; z-index: 1; bottom: 0; left: 0; display: block; width: 100%; height: 52%; pointer-events: none; }
+
+.workspace { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding: 38px clamp(30px, 5.3vw, 88px) 28px; background: #fffdf7; }
+.workspace-top { display: flex; align-items: center; justify-content: space-between; gap: 15px; color: #a0a996; font-size: 10px; font-weight: 800; letter-spacing: .15em; }
+.demo-label { display: inline-flex; align-items: center; gap: 9px; margin: 0; color: #5d8568; font: inherit; }
+.status-dot { width: 8px; height: 8px; border-radius: 50%; background: #f4c15b; box-shadow: 0 0 0 4px #f8df9a6e; }
+.card-shell { width: 100%; max-width: 470px; min-height: 0; margin: auto; }
+.card { position: relative; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+.card::before { content: "✿"; position: absolute; top: -10px; right: 0; color: #edbd62; font-size: 35px; line-height: 1; }
+.card-eyebrow { color: #7e9d76; font-size: 10px; font-weight: 800; letter-spacing: .2em; margin: 0 0 18px; }
+.card h2 { color: #2c4c39; font-family: "Trebuchet MS", "Segoe UI", system-ui, sans-serif; font-size: clamp(49px, 4.8vw, 66px); font-weight: 800; line-height: 1.06; letter-spacing: -.07em; margin: 0 0 14px; }
+.description { color: #788779; font-size: 15px; line-height: 1.6; margin-bottom: 34px; }
+.field { margin-bottom: 20px; }
+.field label { color: #395541; font-size: 13px; font-weight: 800; margin-bottom: 8px; }
+.field input { min-height: 53px; padding: 13px 15px; border: 1.5px solid #dfe6d9; border-radius: 12px; background: #f9faf5; color: #294837; }
+.field input::placeholder { color: #a4aea0; }
+.field small { color: #899887; font-size: 11px; margin-top: 7px; }
+.primary { min-height: 56px; justify-content: space-between; gap: 12px; padding: 12px 14px 12px 20px; border-radius: 13px; background: #f3c266; box-shadow: 0 5px 0 #dba854, 0 15px 25px #d9bd8550; color: #2e4b38; font-size: 15px; font-weight: 800; }
+.primary:disabled { opacity: .65; }
+.button-arrow { display: grid; place-items: center; width: 31px; height: 31px; border-radius: 8px; background: #ffe1a4; color: #426348; font-size: 21px; font-weight: 400; }
+.primary .spinner { border-color: #45684655; border-top-color: #365c3d; }
+.switch-copy { margin-top: 25px; color: #8b9585; font-size: 13px; text-align: center; }
+.text-button { color: #3d7850; font-size: 13px; font-weight: 800; text-decoration-color: #8dae85; }
+.notice, .demo-note { width: 100%; max-width: 470px; margin-left: auto; margin-right: auto; }
+.notice { min-height: 20px; margin-top: 15px; color: #a36d36; }
+.demo-note { color: #9ba697; font-size: 11px; line-height: 1.6; text-align: center; margin-top: 5px; }
+.demo-note span { display: inline-grid; place-items: center; width: 15px; height: 15px; border: 1px solid #b5c1af; border-radius: 50%; margin-right: 4px; font-size: 10px; }
+.error-message { color: #ab5550; font-size: 12px; margin-bottom: 16px; }
+.profile-details { border-color: #dce8d7; }
+.profile-details dd { color: #355b42; }
+.reload-hint { color: #788779; }
+.signup-shell .description { margin-bottom: 23px; }
+.signup-shell .field { margin-bottom: 13px; }
+.signup-shell .field input { min-height: 48px; padding: 10px 14px; }
+.signup-shell .field label { margin-bottom: 6px; }
+.signup-shell .field small { margin-top: 6px; }
+.signup-shell .error-message { margin-bottom: 12px; }
+.signup-shell .switch-copy { margin-top: 18px; }
+
+@media (max-width: 1100px) and (min-width: 761px) {
+  .intro { padding: 35px; }
+  .intro h1 { font-size: clamp(55px, 6vw, 73px); }
+  .workspace { padding-inline: 32px; }
+}
+@media (max-height: 770px) and (min-width: 761px) {
+  .intro-copy { margin-top: 44px; }
+  .intro h1 { font-size: clamp(54px, 5.2vw, 70px); }
+  .meadow-art { height: 54%; }
+  .workspace { padding-block: 22px; }
+}
+@media (max-width: 760px) {
+  .shell { display: block; }
+  .intro { min-height: 220px; height: 220px; padding: 17px 21px; }
+  .intro-top { align-items: center; }
+  .brand { font-size: 21px; }
+  .brand-icon { width: 34px; height: 34px; font-size: 25px; }
+  .edition { display: none; }
+  .intro-copy { margin-top: 24px; max-width: 220px; }
+  .intro .eyebrow, .intro-copy>p:last-child { display: none; }
+  .intro h1 { font-size: 35px; line-height: 1.08; letter-spacing: -.07em; }
+  .meadow-art { left: auto; right: -15px; bottom: -7px; width: 330px; height: 205px; }
+  .workspace { min-height: calc(100svh - 220px); padding: 24px 21px 20px; }
+  .workspace-top { margin-bottom: 24px; }
+  .card h2 { font-size: 51px; }
+  .description { margin-bottom: 25px; }
+  .demo-note { margin-top: 5px; }
+}
+@media (max-width: 390px) {
+  .intro h1 { font-size: 31px; }
+  .meadow-art { right: -18px; }
+  .workspace { padding-inline: 18px; }
+  .workspace-top { font-size: 9px; }
+  .card h2 { font-size: 46px; }
+}
