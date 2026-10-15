@@ -33,7 +33,6 @@ button:focus-visible, a:focus-visible { outline: 3px solid #b88036; outline-offs
 .brand { display: inline-flex; align-items: center; gap: 9px; color: #2d6545; font-size: 24px; font-weight: 800; letter-spacing: -.06em; text-decoration: none; }
 .brand-icon { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: #ffca63; color: #80502d; font-size: 29px; line-height: 1; letter-spacing: 0; box-shadow: 0 3px 0 #cf9d4f; }
 .brand-period { color: #cf8a3f; margin-left: -8px; }
-.edition { color: #57765e; font-size: 10px; font-weight: 800; letter-spacing: .15em; }
 .intro-copy { position: relative; z-index: 2; margin: clamp(66px, 10vh, 120px) 0 auto; padding: 0; max-width: 590px; }
 .intro .eyebrow { display: flex; align-items: center; gap: 12px; color: #46795a; font-size: 11px; letter-spacing: .2em; margin-bottom: 20px; }
 .eyebrow-line { display: block; width: 31px; height: 2px; background: #e2ad4b; }
@@ -96,7 +95,6 @@ button:focus-visible, a:focus-visible { outline: 3px solid #b88036; outline-offs
   .intro-top { align-items: center; }
   .brand { font-size: 21px; }
   .brand-icon { width: 34px; height: 34px; font-size: 25px; }
-  .edition { display: none; }
   .intro-copy { margin-top: 24px; max-width: 220px; }
   .intro .eyebrow, .intro-copy>p:last-child { display: none; }
   .intro h1 { font-size: 35px; line-height: 1.08; letter-spacing: -.07em; }

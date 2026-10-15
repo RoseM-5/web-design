@@ -97,7 +97,6 @@ onBeforeUnmount(() => clearTimeout(timer))
     <aside class="intro">
       <div class="intro-top">
         <a class="brand" href="#" @click.prevent aria-label="Meadow Lab home"><span class="brand-icon" aria-hidden="true">✿</span> meadow<span class="brand-period">.</span></a>
-        <span class="edition">WEB SERVICE DESIGN · WEEK 06</span>
       </div>
       <div class="intro-copy"><p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> A LITTLE SPACE TO GROW</p>
         <h1>Let your day<br><em>blossom.</em></h1>
